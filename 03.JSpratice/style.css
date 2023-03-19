@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b4c7db;
+    flex-direction: column;
+}
+h1{
+    font-family: "Roboto";
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+button{
+    background-color: #0e95a6;
+    border: #08181b 2px solid;
+    box-shadow: 0px 3px 15px #44565a;
+    border-radius: 8px;
+    font-size: 20px;
+    color: white;
+    width: 155px;
+    height: 55px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #008f9d;
+}

@@ -1,0 +1,44 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    width: 375px;
+    height: 400px;
+    background-color: #0004fd;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    flex-direction: column;
+}
+table{
+    border-collapse: collapse;
+}
+td{
+    width: 30px;
+    height: 30px;
+    margin: 0px;
+    border: white 2px solid;
+}
+.input1{
+    width: 46px;
+    height: 34px;
+    border-radius: 6px;
+    font-size: 20px;
+    text-indent: 10px;
+}
+.input2{
+    width: 46px;
+    height: 34px;
+    border-radius: 6px;
+    font-size: 20px;
+    text-indent: 10px;
+}

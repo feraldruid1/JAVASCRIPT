@@ -1,3 +1,4 @@
+//შემოწმებულია
 const cararray = ["bmw", "opel", "lada", "opel", "BMW"];
 function uniqArrayi(arr) {
   const setone = new Set();

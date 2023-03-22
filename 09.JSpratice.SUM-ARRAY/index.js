@@ -1,3 +1,4 @@
+//შემოწმებულია
 const array1 = [1, 5, 2, 3];
 const array2 = [3, 5, 6, 7, 8, 13];
 function aggregrate(first, second) {

@@ -1,3 +1,4 @@
+//შემოწმებულია
 let str = "Brown fox";
 let array = [];
 let count = 0;

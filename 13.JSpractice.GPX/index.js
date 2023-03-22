@@ -1,3 +1,4 @@
+//შემოწმებულია
 const arr = ["G", "P", "X"];
 console.log(fillArr(arr, 10));
 function fillArr(array, index) {

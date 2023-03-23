@@ -3,7 +3,7 @@ input.addEventListener("keydown", space);
 let count = -1;
 function space() {
   if (count != 4) {
-    cou;
+    count++;
   }
   if (count === 4) {
     count = 0;

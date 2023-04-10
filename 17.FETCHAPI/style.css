@@ -1,0 +1,31 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  background-color: #00a4b0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url(bg-pattern-top.svg), url(bg-pattern-bottom.svg);
+  background-position: calc(-46vw + 100%) calc(-34vh + 100%), 45vw 45vh;
+  background-repeat: no-repeat;
+}
+input {
+  border: 0px;
+  width: 326px;
+  height: 50px;
+  border-radius: 15px;
+  text-indent: 30px;
+  font-size: 20px;
+}
+div {
+  margin-top: 30px;
+  width: 326px;
+  height: 306px;
+  background-color: white;
+  border-radius: 15px;
+}

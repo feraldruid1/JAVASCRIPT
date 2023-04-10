@@ -23,9 +23,8 @@ input {
   font-size: 20px;
 }
 div {
-  margin-top: 30px;
-  width: 326px;
-  height: 306px;
-  background-color: white;
-  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

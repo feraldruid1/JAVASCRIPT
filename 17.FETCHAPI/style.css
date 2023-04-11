@@ -11,7 +11,7 @@ body {
   justify-content: center;
   flex-direction: column;
   height: 100vh;
-  background-image: url(bg-pattern-top.svg), url(bg-pattern-bottom.svg);
+  background-image: url(./images/bg-pattern-top.svg), url(./images/bg-pattern-bottom.svg);
   background-position: calc(-46vw + 100%) calc(-34vh + 100%), 45vw 45vh;
   background-repeat: no-repeat;
 }

@@ -24,7 +24,7 @@ input {
   font-size: 20px;
 }
 main {
-  background-image: url(bg-pattern-card.svg);
+  background-image: url(./images/bg-pattern-card.svg);
   background-size: 350px 120px;
   background-repeat: no-repeat;
   margin-top: 30px;
@@ -43,6 +43,7 @@ main {
   justify-content: space-around;
   align-items: center;
   width: 100%;
+  margin-bottom: 20px;
 }
 img {
   width: 140px;

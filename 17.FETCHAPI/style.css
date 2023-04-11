@@ -2,6 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
 }
 body {
   background-color: #00a4b0;
@@ -23,14 +24,79 @@ input {
   font-size: 20px;
 }
 main {
+  background-image: url(bg-pattern-card.svg);
+  background-size: 350px 120px;
+  background-repeat: no-repeat;
   margin-top: 30px;
   width: 326px;
-  height: 306px;
+  height: 374px;
   background-color: white;
   border-radius: 15px;
   display: none;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+.maindiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 5px solid white;
+  margin-top: 50px;
+}
+.borderdiv {
+  width: 100%;
+  height: 1px;
+  background-color: #e8e9ec;
+}
+.followers {
+  font-size: 24px;
+  color: #2e3349;
+  font-weight: 700;
+  text-align: center;
+  line-height: 22px;
+}
+.following {
+  font-size: 24px;
+  color: #2e3349;
+  font-weight: 700;
+  text-align: center;
+  line-height: 22px;
+}
+.login {
+  font-size: 25px;
+  color: #2e3349;
+  font-weight: 700;
+  text-align: center;
+}
+.location {
+  font-size: 14px;
+  color: #6b7082;
+  font-weight: 400;
+  text-align: center;
+}
+.repos {
+  font-size: 24px;
+  color: #2e3349;
+  font-weight: 700;
+  text-align: center;
+  line-height: 22px;
+}
+span {
+  font-size: 14px;
+  color: #2e3349;
+  font-weight: 400;
+  text-align: center;
+  line-height: 12px;
+  letter-spacing: 1.5px;
+  margin-top: 2px;
 }
 div {
   display: flex;

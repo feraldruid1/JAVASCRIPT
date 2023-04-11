@@ -1,13 +1,13 @@
 const body = document.querySelector("body");
 const input = document.querySelector("input");
 const main = document.querySelector("main");
+const form = document.querySelector("form");
 function github() {
   fetch(`https://api.github.com/users/${input.value}`)
     .then((response) => {
       if (!response.ok) {
         main.innerHTML = `<img src="./images/nouser.png" alt"">   <div class="login">No profile with this username</div> <div class="borderdiv"> </div> <div class="maindiv"><div class="followers">-- <span>followers</span></div><div class="repos">--<span>repos</span></div> <div class="following">-- <span>following</span></div></div>`;
         main.style.display = "flex";
-        input.value = "";
         return console.log("profile not found");
       }
       return response.json();
@@ -18,8 +18,7 @@ function github() {
       input.value = "";
     });
 }
-input.addEventListener("keypress", function (event) {
-  if (event.key === "Enter") {
-    github();
-  }
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  github();
 });

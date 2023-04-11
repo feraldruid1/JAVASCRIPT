@@ -5,7 +5,7 @@ function github() {
   fetch(`https://api.github.com/users/${input.value}`)
     .then((response) => {
       if (!response.ok) {
-        throw new Error("Country not found");
+        throw new Error("profile not found");
       }
       return response.json();
     })
@@ -14,8 +14,4 @@ function github() {
       main.style.display = "flex";
     });
 }
-input.addEventListener("keypress", function (event) {
-  if (event.key === "Enter") {
-    github();
-  }
-});
+input.addEventListener("submit", github);

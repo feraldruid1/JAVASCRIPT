@@ -3,10 +3,19 @@ const input = document.querySelector("input");
 const main = document.querySelector("main");
 function github() {
   fetch(`https://api.github.com/users/${input.value}`)
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Country not found");
+      }
+      return response.json();
+    })
     .then((data) => {
       main.innerHTML = `<div>${data.followers} <span>followers</span></div><div>${data.public_repos}<span>repos</span></div> <div>${data.following} <span>following</span></div>`;
       main.style.display = "flex";
     });
 }
-input.addEventListener("submit", github);
+input.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    github();
+  }
+});

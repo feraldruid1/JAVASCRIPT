@@ -1,0 +1,17 @@
+const formulyear = 1000 * 60 * 60 * 24 * 30.5 * 12;
+const formulmonth = 1000 * 60 * 60 * 24 * 30.5;
+const formulday = 1000 * 60 * 60 * 24;
+const formulhours = 1000 * 60 * 60;
+const formulminutes = 1000 * 60;
+const formulseconds = 1000;
+const date = new Date();
+const datetwo = new Date(1991, 4, 9, 12, 30, 0);
+const datethree = date.getTime() - datetwo.getTime();
+const yeardiference = Math.floor(datethree / formulyear);
+const monthdiference = Math.floor((datethree % formulyear) / formulmonth);
+const daydiference = Math.floor(((datethree % formulyear) % formulmonth) / formulday);
+const hoursdiference = Math.floor((((datethree % formulyear) % formulmonth) % formulday) / formulhours);
+const minutesdiference = Math.floor(((((datethree % formulyear) % formulmonth) % formulday) % formulhours) / formulminutes);
+const secondsdiference = Math.floor((((((datethree % formulyear) % formulmonth) % formulday) % formulhours) % formulminutes) / formulseconds);
+const diferencedate = new Date(yeardiference, daydiference, hoursdiference, minutesdiference, secondsdiference);
+console.log(yeardiference + " year " + monthdiference + " month " + daydiference + " day " + hoursdiference + ":" + minutesdiference + ":" + secondsdiference);

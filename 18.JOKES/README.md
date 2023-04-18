@@ -1,1 +1,1 @@
-[index.html](https://feraldruid1.github.io/JAVASCRIPT/18.jokes)
+[index.html](https://feraldruid1.github.io/JAVASCRIPT/18.JOKES)

@@ -1,7 +1,7 @@
 const input = document.querySelector("input");
 const main = document.querySelector("main");
 let div = `<div><img src=""><h1></h1></div>`;
-
+const random = Math.floor(Math.random() * 999998 + 200000);
 fetch(`https://api.themoviedb.org/3/movie/419704?api_key=ca13458cc8f7d31e877d4c3e5247aac9&language=en-US`)
   .then((response) => {
     return response.json();

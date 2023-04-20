@@ -48,7 +48,6 @@ button {
 h1 {
   font-family: "Roboto", sans-serif;
   color: white;
-  margin-left: 10px;
   font-size: 100%;
 }
 main {
@@ -63,7 +62,6 @@ span {
   color: yellow;
   font-weight: bold;
   font-size: 15px;
-  margin-left: 10px;
 }
 img {
   width: 180px;
@@ -81,6 +79,7 @@ img {
 }
 .genre {
   color: white;
+  display: block;
 }
 .infodiv {
   display: flex;

@@ -23,7 +23,6 @@ body {
   border-radius: 12px;
   font-family: "Roboto", sans-serif;
   overflow: hidden;
-  gap: 20px;
 }
 input {
   width: 186px;
@@ -48,7 +47,7 @@ button {
 h1 {
   font-family: "Roboto", sans-serif;
   color: white;
-  font-size: 100%;
+  font-size: 30px;
 }
 main {
   display: flex;
@@ -60,12 +59,12 @@ header {
 }
 span {
   color: yellow;
-  font-weight: bold;
   font-size: 15px;
+  display: flex;
+  flex-wrap: wrap;
 }
 img {
-  width: 180px;
-  height: 100%;
+  width: 150px;
 }
 .enddiv {
   width: 252px;
@@ -79,7 +78,6 @@ img {
 }
 .genre {
   color: white;
-  display: block;
 }
 .infodiv {
   display: flex;
@@ -87,6 +85,7 @@ img {
   justify-content: space-around;
   align-items: start;
   height: 100%;
+  margin-left: 10px;
 }
 main {
   display: flex;
@@ -96,10 +95,11 @@ main {
   justify-content: center;
 }
 .IMG {
-  width: 180px;
-  height: 100%;
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 150px;
+}
+.stars {
+  display: flex;
 }

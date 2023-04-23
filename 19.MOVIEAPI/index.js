@@ -58,8 +58,13 @@ form.addEventListener("submit", function (event) {
                     moviegenre += "," + genresdata.genres[y].name;
                   }
                   if (i === data.results[k].genre_ids.length - 1) {
-                    div = `<div class="conteiner"><img src="http://image.tmdb.org/t/p/w500/${data.results[k].poster_path}"><div class="infodiv"><div class="infodiv"><h1>${data.results[k].original_title}</h1><span class="genre">${moviegenre}</span> <div class="enddiv"> <span class="date">${data.results[k].release_date}</span><span>${data.results[k].vote_average}</span> </div> </div></div>`;
-                    main.insertAdjacentHTML("beforeend", div);
+                    if (data.results[k].poster_path === null) {
+                      div = `<div class="conteiner"><div class="IMG"><h1>No Poster</h1></div><div class="infodiv"><div class="infodiv"><h1>${data.results[k].original_title}</h1><span class="genre">${moviegenre}</span> <div class="enddiv"> <span class="date">${data.results[k].release_date}</span><span>${data.results[k].vote_average}</span> </div> </div></div>`;
+                      main.insertAdjacentHTML("beforeend", div);
+                    } else {
+                      div = `<div class="conteiner"><img src="http://image.tmdb.org/t/p/w500/${data.results[k].poster_path}"><div class="infodiv"><div class="infodiv"><h1>${data.results[k].original_title}</h1><span class="genre">${moviegenre}</span> <div class="enddiv"> <span class="date">${data.results[k].release_date}</span><span>${data.results[k].vote_average}</span> </div> </div></div>`;
+                      main.insertAdjacentHTML("beforeend", div);
+                    }
                   }
                 }
               }

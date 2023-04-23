@@ -95,3 +95,11 @@ main {
   align-items: center;
   justify-content: center;
 }
+.IMG {
+  width: 180px;
+  height: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

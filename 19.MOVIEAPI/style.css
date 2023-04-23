@@ -78,6 +78,7 @@ img {
 }
 .genre {
   color: white;
+  width: auto;
 }
 .infodiv {
   display: flex;

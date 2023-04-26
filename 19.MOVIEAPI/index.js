@@ -27,12 +27,10 @@ function moviedb(link) {
     .then((data) => {
       for (let k = 0; k < data.results.length; k++) {
         if (data.results[k].poster_path === null) {
-          starimg(data.results[k].vote_average);
-          const div = `<div class="conteiner"><div class="IMG"><h1>No Poster</h1></div><div class="infodiv"><div class="infodiv"><h1>${data.results[k].original_title}</h1><span class="genre">${"moviegenre"}</span>${img}<div class="enddiv"> <span class="date">${data.results[k].release_date.slice(0, 4)}</span><span>${data.results[k].vote_average}</span> </div> </div></div>`;
+          const div = `<div class="conteiner"><div class="IMG"><h1>No Poster</h1></div><div class="infodiv"><div class="infodiv"><h1>${data.results[k].original_title}</h1><span class="genre">${"moviegenre"}</span>$<div class="stars">${starimg(data.results[k].vote_average, img)}</div><div class="enddiv"> <span class="date">${data.results[k].release_date.slice(0, 4)}</span><span>${data.results[k].vote_average}</span> </div> </div></div>`;
           main.insertAdjacentHTML("beforeend", div);
         } else {
-          starimg(data.results[k].vote_average);
-          const div = `<div class="conteiner"><img src="http://image.tmdb.org/t/p/w500/${data.results[k].poster_path}"><div class="infodiv"><div class="infodiv"><h1>${data.results[k].original_title}</h1><span class="genre">${"moviegenre"}</span><div class="stars">${img}</div> <div class="enddiv"> <span class="date">${data.results[k].release_date.slice(0, 4)}</span><span>${data.results[k].vote_average}</span> </div> </div></div>`;
+          const div = `<div class="conteiner"><img src="http://image.tmdb.org/t/p/w500/${data.results[k].poster_path}"><div class="infodiv"><div class="infodiv"><h1>${data.results[k].original_title}</h1><span class="genre">${"moviegenre"}</span><div class="stars">${starimg(data.results[k].vote_average)}</div> <div class="enddiv"> <span class="date">${data.results[k].release_date.slice(0, 4)}</span><span>${data.results[k].vote_average}</span> </div> </div></div>`;
           main.insertAdjacentHTML("beforeend", div);
         }
       }
@@ -40,8 +38,9 @@ function moviedb(link) {
   main.innerHTML = "";
 }
 function starimg(number) {
-  let img;
+  let img = "";
   for (let i = 0; i < Math.round(number); i++) {
     img += `<img class="star" src="./images/star.svg" alt="star" />`;
   }
+  return img;
 }

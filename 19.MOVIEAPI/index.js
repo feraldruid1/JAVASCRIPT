@@ -18,17 +18,20 @@ function apigenres() {
         genres.push(data.genres[i].id);
       }
     });
-  console.log(genres);
 }
-apigenres();
 function moviedb(link) {
   fetch(link)
     .then((response) => {
       return response.json();
     })
     .then((data) => {
+      console.log(data);
       for (let k = 0; k < data.results.length; k++) {
-        const div = `<div class="conteiner"><img src="http://image.tmdb.org/t/p/w500/${data.results[k].poster_path}"><div class="infodiv"><div class="infodiv"><h1>${data.results[k].original_title}</h1><span class="genre">${"moviegenre"}</span><div class="stars">${starimg(data.results[k].vote_average)}</div> <div class="enddiv"> <span class="date">${data.results[k].release_date.slice(0, 4)}</span><span>${data.results[k].vote_average}</span> </div> </div></div>`;
+        let filmgenres = [];
+        for (let j = 0; j < data.results[k].genre_ids.length; j++) {
+          filmgenres.push(data.results[k].genre_ids[j]);
+        }
+        const div = `<div class="conteiner"><img src="http://image.tmdb.org/t/p/w500/${data.results[k].poster_path}"><div class="infodiv"><div class="infodiv"><h1>${data.results[k].original_title}</h1><span class="genre">${filmgenres}</span><div class="stars">${starimg(data.results[k].vote_average)}</div> <div class="enddiv"> <span class="date">${data.results[k].release_date.slice(0, 4)}</span><span>${data.results[k].vote_average}</span> </div> </div></div>`;
         main.insertAdjacentHTML("beforeend", div);
       }
     });

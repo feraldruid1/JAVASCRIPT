@@ -15,7 +15,7 @@ function apigenres() {
     .then((response) => response.json())
     .then((data) => {
       for (let i = 0; i < data.genres.length; i++) {
-        genres.push(data.genres[i]);
+        genres.push(data.genres[i].id);
       }
     });
   console.log(genres);

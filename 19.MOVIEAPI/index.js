@@ -10,7 +10,7 @@ form.addEventListener("submit", function (event) {
   moviedb(`https://api.themoviedb.org/3/search/movie?api_key=${apikey}&query=${input.value}`);
 });
 
-(function apigenres() {
+function apigenres() {
   fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apikey}&language=en-US`)
     .then((response) => response.json())
     .then((data) => {
@@ -18,7 +18,9 @@ form.addEventListener("submit", function (event) {
         genres.push(data.genres[i]);
       }
     });
-})();
+  console.log(genres);
+}
+apigenres();
 function moviedb(link) {
   fetch(link)
     .then((response) => {

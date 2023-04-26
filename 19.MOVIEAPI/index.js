@@ -19,6 +19,18 @@ function fetchmovie() {
 fetchmovie();
 form.addEventListener("submit", function (event) {
   event.preventDefault();
+  fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apikey}&query=${input.value}`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      main.innerHTML = "";
+      console.log(data);
+      for (let k = 0; k < data.results.length; k++) {
+        const div = `<div class="conteiner"><img src="http://image.tmdb.org/t/p/w500/${data.results[k].poster_path}"><div class="infodiv"><h1>${data.results[k].original_title}</h1><span class="genre">${"moviegenre"}</span><div class="stars"></div> <div class="enddiv"><span class="date">${data.results[k].release_date.slice(0, 4)}</span><span>${data.results[k].vote_average}</span> </div> </div>`;
+        main.insertAdjacentHTML("beforeend", div);
+      }
+    });
 });
 
 (function apigenres() {

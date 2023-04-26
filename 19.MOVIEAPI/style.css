@@ -107,3 +107,6 @@ main {
   width: 24px;
   height: 24px;
 }
+.stars {
+  display: flex;
+}

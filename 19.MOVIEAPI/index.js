@@ -11,8 +11,7 @@ function fetchmovie() {
     })
     .then((data) => {
       for (let k = 0; k < data.results.length; k++) {
-        const div = `<div class="conteiner"><img src="http://image.tmdb.org/t/p/w500/${data.results[k].poster_path}"><div class="infodiv"><h1>${data.results[k].original_title}</h1><span class="genre">${"moviegenre"}</span><div class="stars"></div> <div class="enddiv"><span class="date">${data.results[k].release_date.slice(0, 4)}</span><span>${data.results[k].vote_average}</span> </div> </div>`;
-        main.insertAdjacentHTML("beforeend", div);
+        apihtml();
       }
     });
 }
@@ -27,8 +26,7 @@ form.addEventListener("submit", function (event) {
       main.innerHTML = "";
       console.log(data);
       for (let k = 0; k < data.results.length; k++) {
-        const div = `<div class="conteiner"><img src="http://image.tmdb.org/t/p/w500/${data.results[k].poster_path}"><div class="infodiv"><h1>${data.results[k].original_title}</h1><span class="genre">${"moviegenre"}</span><div class="stars"></div> <div class="enddiv"><span class="date">${data.results[k].release_date.slice(0, 4)}</span><span>${data.results[k].vote_average}</span> </div> </div>`;
-        main.insertAdjacentHTML("beforeend", div);
+        apihtml();
       }
     });
 });
@@ -43,3 +41,7 @@ form.addEventListener("submit", function (event) {
       console.log(genres);
     });
 })();
+function apihtml() {
+  const div = `<div class="conteiner"><img src="http://image.tmdb.org/t/p/w500/${data.results[k].poster_path}"><div class="infodiv"><h1>${data.results[k].original_title}</h1><span class="genre">${"moviegenre"}</span><div class="stars"></div> <div class="enddiv"><span class="date">${data.results[k].release_date.slice(0, 4)}</span><span>${data.results[k].vote_average}</span> </div> </div>`;
+  main.insertAdjacentHTML("beforeend", div);
+}

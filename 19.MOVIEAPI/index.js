@@ -60,14 +60,14 @@ let genre = [
 ];
 let array = [28, 12, 878];
 function genrefy(arr) {
-  for (let i = 0; i < arr.lenght; i++) {
-    for (let j = 0; j < genre.lenght; j++) {
+  const newarr = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < genre.length; j++) {
       if (arr[i] === genre[j].id) {
-        arr.push(genre[i].name);
-        console.log("ni");
+        newarr.push(genre[j].name);
       }
     }
   }
-  return array;
+  return newarr;
 }
-genrefy();
+console.log(genrefy(array));

@@ -16,7 +16,6 @@ function apigenres() {
       for (let i = 0; i < data.genres.length; i++) {
         genresapi.push(data.genres[i]);
       }
-      return;
     });
   return genresapi;
 }
@@ -38,7 +37,7 @@ function moviedb(link) {
         const div = `<div class="conteiner">
         <img src="http://image.tmdb.org/t/p/w500/${data.results[k].poster_path}">
         <div class="infodiv"><h1>${data.results[k].original_title}</h1>
-        <span class="genre">${apigenres()}</span>
+        <span class="genre">${"niko"}</span>
         <div class="stars">${starimg(data.results[k].vote_average)}</div> 
         <div class="enddiv"> <span class="date">${data.results[k].release_date.slice(0, 4)}</span><span>${data.results[k].vote_average}</span> </div> </div></div>`;
         main.insertAdjacentHTML("beforeend", div);
@@ -46,6 +45,21 @@ function moviedb(link) {
     });
   main.innerHTML = "";
 }
+let genre = [
+  {
+    id: 28,
+    name: "Action",
+  },
+  {
+    id: 12,
+    name: "Adventure",
+  },
+  {
+    id: 878,
+    name: "Science Fiction",
+  },
+];
+let arr = [28, 12, 878];
 function genresfunc(arr) {
   let genres = [];
   for (let i = 0; i < arr.length; i++) {

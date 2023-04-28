@@ -11,20 +11,7 @@ form.addEventListener("submit", function (event) {
 function apigenres(arr) {
   fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apikey}&language=en-US`)
     .then((response) => response.json())
-    .then((data) => {
-      return genresfunc(arr, data.genres);
-    });
-}
-function genresfunc(arr, genresdata) {
-  let genres = [];
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < genresdata.length; j++) {
-      if (arr[i] === genresdata[j].id) {
-        genres.push(genresdata[j].name);
-      }
-    }
-  }
-  return genres;
+    .then((data) => {});
 }
 function starimg(number) {
   let img = "";
@@ -52,3 +39,30 @@ function moviedb(link) {
     });
   main.innerHTML = "";
 }
+let genre = [
+  {
+    id: 28,
+    name: "Action",
+  },
+  {
+    id: 12,
+    name: "Adventure",
+  },
+  {
+    id: 878,
+    name: "Science Fiction",
+  },
+];
+let arr = [28, 12, 878];
+function genresfunc(arr) {
+  let genres = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < genre.length; j++) {
+      if (arr[i] === genre[j].id) {
+        genres.push(genre[j].name);
+      }
+    }
+  }
+  return genres;
+}
+console.log(genresfunc(arr));

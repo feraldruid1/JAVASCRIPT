@@ -3,44 +3,28 @@ const input = document.querySelector("input");
 const main = document.querySelector("main");
 const form = document.querySelector("form");
 const apikey = "ca13458cc8f7d31e877d4c3e5247aac9";
-const newgenre = ["niko", "niko"];
 moviedb(`https://api.themoviedb.org/3/movie/popular?api_key=${apikey}&language=en-US&page=1`);
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   moviedb(`https://api.themoviedb.org/3/search/movie?api_key=${apikey}&query=${input.value}`);
 });
-
 function apigenres(arr) {
-  let genres = [];
   fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apikey}&language=en-US`)
     .then((response) => response.json())
     .then((data) => {
-      for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < data.genres.length; j++) {
-          if (arr[i] === data.genres[j].id) {
-            genres.push(data.genres[j].name);
-          }
-        }
-      }
+      return genresfunc(arr, data.genres);
     });
-  return genres;
 }
-function moviedb(link) {
-  fetch(link)
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      for (let k = 0; k < data.results.length; k++) {
-        let filmgenres = [];
-        for (let j = 0; j < data.results[k].genre_ids.length; j++) {
-          filmgenres.push(data.results[k].genre_ids[j]);
-        }
-        const div = `<div class="conteiner"><img src="http://image.tmdb.org/t/p/w500/${data.results[k].poster_path}"><div class="infodiv"><div class="infodiv"><h1>${data.results[k].original_title}</h1><span class="genre">${apigenres(filmgenres)}</span><div class="stars">${starimg(data.results[k].vote_average)}</div> <div class="enddiv"> <span class="date">${data.results[k].release_date.slice(0, 4)}</span><span>${data.results[k].vote_average}</span> </div> </div></div>`;
-        main.insertAdjacentHTML("beforeend", div);
+function genresfunc(arr, genresdata) {
+  let genres = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < genresdata.length; j++) {
+      if (arr[i] === genresdata[j].id) {
+        genres.push(genresdata[j].name);
       }
-    });
-  main.innerHTML = "";
+    }
+  }
+  return genres;
 }
 function starimg(number) {
   let img = "";
@@ -48,4 +32,23 @@ function starimg(number) {
     img += `<img class="star" src="./images/star.svg" alt="star" />`;
   }
   return img;
+}
+
+function moviedb(link) {
+  fetch(link)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      for (let k = 0; k < data.results.length; k++) {
+        const div = `<div class="conteiner">
+        <img src="http://image.tmdb.org/t/p/w500/${data.results[k].poster_path}">
+        <div class="infodiv"><h1>${data.results[k].original_title}</h1>
+        <span class="genre">${apigenres(data.results[k].genre_ids)}</span>
+        <div class="stars">${starimg(data.results[k].vote_average)}</div> 
+        <div class="enddiv"> <span class="date">${data.results[k].release_date.slice(0, 4)}</span><span>${data.results[k].vote_average}</span> </div> </div></div>`;
+        main.insertAdjacentHTML("beforeend", div);
+      }
+    });
+  main.innerHTML = "";
 }

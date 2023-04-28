@@ -64,9 +64,9 @@ let arr = [28, 12, 878];
 function genresfunc(arr) {
   let genres = [];
   for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < data.genres.length; j++) {
-      if (arr[i] === data.genres[j].id) {
-        genres.push(data.genres[j].name);
+    for (let j = 0; j < genre.length; j++) {
+      if (arr[i] === genre[j].id) {
+        genres.push(genre[j].name);
       }
     }
   }

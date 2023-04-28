@@ -1,1 +1,1 @@
-[index.html](https://feraldruid1.github.io/01.SEARCH)
+[index.html](https://feraldruid1.github.io/JAVASCRIPT/01.SEARCH)

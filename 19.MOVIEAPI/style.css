@@ -61,8 +61,6 @@ header {
 span {
   color: yellow;
   font-size: 15px;
-  display: flex;
-  flex-wrap: wrap;
 }
 img {
   width: 150px;

@@ -17,7 +17,7 @@ function apigenres() {
         genre.push(data.genres[i]);
       }
     });
-  return genre.join(" ");
+  return genre;
 }
 function starimg(number) {
   let img = "";
@@ -55,5 +55,5 @@ function genresfunc(arr, obj) {
       }
     }
   }
-  return genres;
+  return genres.join(" ");
 }

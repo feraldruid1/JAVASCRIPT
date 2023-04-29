@@ -17,7 +17,7 @@ function apigenres() {
         genre.push(data.genres[i]);
       }
     });
-  return genre;
+  return genre.join(" ");
 }
 function starimg(number) {
   let img = "";

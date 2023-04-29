@@ -46,7 +46,7 @@ function moviedb(link) {
     });
   main.innerHTML = "";
 }
-function genresfunc(arr, obj) {
+function genresfunc(arr) {
   let genres = [];
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < genre.length; j++) {
@@ -55,5 +55,5 @@ function genresfunc(arr, obj) {
       }
     }
   }
-  return genres.join(" ");
+  return genres.join(", ");
 }

@@ -13,6 +13,7 @@ function game() {
     computercount++;
     player.innerHTML = `player:${playercount}`;
     computer.innerHTML = `computer:${computercount}`;
+    rock.remove();
   }
   if (random < 2) {
     h1.innerHTML = "you win";

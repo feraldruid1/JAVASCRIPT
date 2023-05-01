@@ -1,0 +1,66 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 100vh;
+  flex-direction: column;
+}
+main {
+  display: flex;
+  gap: 10px;
+  width: 400px;
+  justify-content: space-around;
+}
+div {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.iconrock {
+  background-image: url("./images/fist.png");
+  background-size: 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: red;
+  font-weight: 700;
+  font-size: 10px;
+}
+.iconpaper {
+  background-image: url("./images/hello.png");
+  background-size: 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: red;
+  font-weight: 700;
+  font-size: 10px;
+}
+.iconscissors {
+  background-image: url("./images/scissors.png");
+  background-size: 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: red;
+  font-weight: 700;
+  font-size: 10px;
+}
+.enddiv {
+  display: flex;
+}

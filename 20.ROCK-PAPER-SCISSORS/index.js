@@ -20,6 +20,9 @@ function game() {
     player.innerHTML = `player:${playercount}`;
     computer.innerHTML = `computer:${computercount}`;
   }
+  if (playercount === 3 || computercount === 3) {
+    window.location.reload();
+  }
 }
 rock.addEventListener("click", game);
 paper.addEventListener("click", game);

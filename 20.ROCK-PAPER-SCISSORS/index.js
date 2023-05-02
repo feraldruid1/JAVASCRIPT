@@ -4,6 +4,7 @@ const scissors = document.querySelector(".scissors");
 const h1 = document.querySelector(".winner");
 const player = document.querySelector(".playercount");
 const computer = document.querySelector(".computercount");
+const main = document.querySelector("main");
 let playercount = 0;
 let computercount = 0;
 function game() {
@@ -13,7 +14,6 @@ function game() {
     computercount++;
     player.innerHTML = `player:${playercount}`;
     computer.innerHTML = `computer:${computercount}`;
-    rock.remove();
   }
   if (random < 2) {
     h1.innerHTML = "you win";
@@ -21,8 +21,14 @@ function game() {
     player.innerHTML = `player:${playercount}`;
     computer.innerHTML = `computer:${computercount}`;
   }
+  if (random === 2) {
+    h1.innerHTML = "draw";
+    player.innerHTML = `player:${playercount}`;
+    computer.innerHTML = `computer:${computercount}`;
+  }
   if (playercount === 3 || computercount === 3) {
     window.location.reload();
+    rock.remove();
   }
 }
 rock.addEventListener("click", game);

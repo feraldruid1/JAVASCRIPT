@@ -18,28 +18,34 @@ for (let i = 0; i < alldiv.length; i++) {
       return null;
     }
     for (let y = 0; y < array.length; y++) {
-      if (array[y].innerHTML != "X" && array[y].innerHTML != "O") {
-        array[y].innerHTML = "O";
+      const random = Math.floor(Math.random() * 8);
+      if (array[random].innerHTML != "X" && array[random].innerHTML != "O") {
+        array[random].innerHTML = "O";
         break;
+      } else {
+        if (array[y].innerHTML != "X" && array[y].innerHTML != "O") {
+          array[y].innerHTML = "O";
+          break;
+        }
       }
     }
+    // if (alldiv[i - 1].innerHTML === "X" && alldiv[i + 1].innerHTML === "X") {
+    //   console.log("win");
+    // }
+    // if (alldiv[i - 1].innerHTML === "X" && alldiv[i - 2].innerHTML === "X") {
+    //   console.log("win");
+    // }
+    // if (alldiv[i - 3].innerHTML === "X" && alldiv[i + 3].innerHTML === "X") {
+    //   console.log("win");
+    // }
+    // if (alldiv[i - 3].innerHTML === "X" && alldiv[i - 6].innerHTML === "X") {
+    //   console.log("win");
+    // }
+    // if (alldiv[i - 4].innerHTML === "X" && alldiv[i + 4].innerHTML === "X") {
+    //   console.log("win");
+    // }
+    // if (alldiv[i - 2].innerHTML === "X" && alldiv[i + 2].innerHTML === "X") {
+    //   console.log("win");
+    // }
   });
 }
-// if (alldiv[i - 1].innerHTML === "X" && alldiv[i + 1].innerHTML === "X") {
-//   console.log("win");
-// }
-// if (alldiv[i - 1].innerHTML === "X" && alldiv[i - 2].innerHTML === "X") {
-//   console.log("win");
-// }
-// if (alldiv[i - 3].innerHTML === "X" && alldiv[i + 3].innerHTML === "X") {
-//   console.log("win");
-// }
-// if (alldiv[i - 3].innerHTML === "X" && alldiv[i - 6].innerHTML === "X") {
-//   console.log("win");
-// }
-// if (alldiv[i - 4].innerHTML === "X" && alldiv[i + 4].innerHTML === "X") {
-//   console.log("win");
-// }
-// if (alldiv[i - 2].innerHTML === "X" && alldiv[i + 2].innerHTML === "X") {
-//   console.log("win");
-// }

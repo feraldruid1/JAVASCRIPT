@@ -29,26 +29,23 @@ for (let i = 0; i < alldiv.length; i++) {
         }
       }
     }
-    for(let k=0; k<array.length; k++){
-      if(array[k].innerHTML===array[k+1]&&array[k].innerHTML===array[k+1])
+    if (alldiv[i - 1].innerHTML === "X" && alldiv[i + 1].innerHTML === "X") {
+      console.log("win");
     }
-    // if (alldiv[i - 1].innerHTML === "X" && alldiv[i + 1].innerHTML === "X") {
-    //   console.log("win");
-    // }
-    // if (alldiv[i - 1].innerHTML === "X" && alldiv[i - 2].innerHTML === "X") {
-    //   console.log("win");
-    // }
-    // if (alldiv[i - 3].innerHTML === "X" && alldiv[i + 3].innerHTML === "X") {
-    //   console.log("win");
-    // }
-    // if (alldiv[i - 3].innerHTML === "X" && alldiv[i - 6].innerHTML === "X") {
-    //   console.log("win");
-    // }
-    // if (alldiv[i - 4].innerHTML === "X" && alldiv[i + 4].innerHTML === "X") {
-    //   console.log("win");
-    // }
-    // if (alldiv[i - 2].innerHTML === "X" && alldiv[i + 2].innerHTML === "X") {
-    //   console.log("win");
-    // }
+    if (alldiv[i - 1].innerHTML === "X" && alldiv[i - 2].innerHTML === "X") {
+      console.log("win");
+    }
+    if (alldiv[i - 3].innerHTML === "X" && alldiv[i + 3].innerHTML === "X") {
+      console.log("win");
+    }
+    if (alldiv[i - 3].innerHTML === "X" && alldiv[i - 6].innerHTML === "X") {
+      console.log("win");
+    }
+    if (alldiv[i - 4].innerHTML === "X" && alldiv[i + 4].innerHTML === "X") {
+      console.log("win");
+    }
+    if (alldiv[i - 2].innerHTML === "X" && alldiv[i + 2].innerHTML === "X") {
+      console.log("win");
+    }
   });
 }

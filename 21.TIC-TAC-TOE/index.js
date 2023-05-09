@@ -29,6 +29,9 @@ for (let i = 0; i < alldiv.length; i++) {
         }
       }
     }
+    for(let k=0; k<array.length; k++){
+      if(array[k].innerHTML===array[k+1]&&array[k].innerHTML===array[k+1])
+    }
     // if (alldiv[i - 1].innerHTML === "X" && alldiv[i + 1].innerHTML === "X") {
     //   console.log("win");
     // }
